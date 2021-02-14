@@ -45,6 +45,12 @@ module.exports = {
       text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
     })
 
+    text+=`\n\n:musical_note: **Musique :**`
+    client.commands.forEach(command => {
+      if (!command.help || !command.help.category || !command.help.name) return;
+      if (command.help.category.toLowerCase() !== 'music') return;
+      text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
+    })
     console.log(text)
 
     message.channel.send(
