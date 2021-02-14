@@ -1,0 +1,22 @@
+const Discord = require("discord.js");
+const {PREFIX} = require("../config.js");
+const { MessageEmbed } = require('discord.js')
+
+exports.run = (client, message) => {
+	
+	const embed = new Discord.MessageEmbed()
+
+.setTitle('📸 Avatar')
+.setDescription('Utilisation :')
+.addField('\`.avatar\`')
+.addField('\(envoie votre photo de profil\)')
+.addField('\`.avatar <mention>\`')
+.addField('\(envoie la photo de profil de la personne mentionnÃ©e\)')
+.addField('Aliases : `pp` `pdp` `photo` ')
+.setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL())
+message.channel.send(embed)
+}
+
+module.exports.help = {
+    name: 'help-avatar',
+        alias: ["avatar-help", "Avatar-help", "Avatar-Help", "Help-Avatar", "Help-avatar"]

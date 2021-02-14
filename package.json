@@ -1,0 +1,26 @@
+{
+  "name": "anotherbot",
+  "version": "1.0.0",
+  "description": "simple bot discord !",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.3",
+    "amethyste-api": "^1.1.4",
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "github:discordjs/Commando",
+    "distube": "^2.8.8",
+    "ffmpeg-static": "^4.2.7",
+    "git": "^0.1.5",
+    "moment": "^2.29.1",
+    "node-opus": "^0.3.3",
+    "opusscript": "0.0.7",
+    "superagent": "^6.1.0",
+    "quick.db": "^7.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
