@@ -19,7 +19,7 @@ const config = {
 
 Les packages du bot sont les suivants :  
 `discord.js` : npm i discord-js  
-`fs` : npm install file-system --save  
+`fs` : npm install fs
 `distube` : npm install distube  
 `canvas` : npm i canvas  
 `FFmpeg` : npm install ffmpeg-static  
