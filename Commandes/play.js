@@ -8,11 +8,13 @@ module.exports.run = (client, message, args) => {
     if(!message.member.voice) return message.channel.send(":x: Vous n'êtes pas en vocal !")
     client.distube.play(message, music)
     message.channel.send(":white_check_mark: Musique en cours de lecture !")
-    
+
 }
 
 module.exports.help = {
     name: 'play',
     alias: ["p", "mp", "pm", "Play", "P", "Mp", "Pm"],
     category: "music"
+    utility: "permet de connecter le bot et commencer la musique.",
+    usage: "`.play <url>`"
   };

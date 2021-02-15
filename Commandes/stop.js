@@ -22,4 +22,6 @@ module.exports.help = {
     name: 'stop',
     alias: ["st", "Stop", "St"],
     category: "music"
+    utility: "permet de connecter stopper la musique.",
+    usage: "`.stop`"
   };
