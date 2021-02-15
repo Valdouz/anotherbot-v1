@@ -14,7 +14,7 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: 'play',
     alias: ["p", "mp", "pm", "Play", "P", "Mp", "Pm"],
-    category: "music"
+    category: "music",
     utility: "permet de connecter le bot et commencer la musique.",
     usage: "`.play <url>`"
   };

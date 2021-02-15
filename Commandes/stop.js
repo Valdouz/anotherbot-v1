@@ -21,7 +21,7 @@ module.exports.run = async(client, message, args) => {
 module.exports.help = {
     name: 'stop',
     alias: ["st", "Stop", "St"],
-    category: "music"
+    category: "music",
     utility: "permet de connecter stopper la musique.",
-    usage: "`.stop`"
+    usage: "`.stop"
   };
