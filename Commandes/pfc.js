@@ -5,7 +5,7 @@ module.exports.run = (client, message, args) => {
 
 
 const pfc = [
-    "feuilles",
+    "feuille",
     "pierre",
     "ciseaux"
 ]
@@ -28,6 +28,18 @@ if(args[0]) {
 
         if(args[0] == "feuille" && pfc[result] == "pierre") {
             message.channel.send(`${pfc[result]}, Tu as gagné !`)
+        }
+
+        if(args[0] == "feuille" && pfc[result] == "ciseaux") {
+            message.channel.send(`${pfc[result]}, Tu as perdu !`)
+        }
+
+        if(args[0] == "pierre" && pfc[result] == "ciseaux") {
+            message.channel.send(`${pfc[result]}, Tu as gagné !`)
+        }
+
+        if(args[0] == "pierre" && pfc[result] == "feuille") {
+            message.channel.send(`${pfc[result]}, Tu as perdu !`)
         }
   } else {
       return;
