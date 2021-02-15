@@ -15,7 +15,7 @@ exports.run = (client, message) => {
     `• ID: ${guild.id}
     •Chef : ${guild.owner.user.tag} (${guild.ownerID})
     •Roles: ${guild.roles.cache.size}
-    •Crée le ${moment(guild.createdAT).format('DD/MM/YYYY')}
+    •Crée le ${message.guild.createAT}
     `)
     .setDescription(`${message.author.id === message.guild.owner.id ?  "Votre serveur" :  "Ce serveur"} possède ${guild.channels.cache.filter(ch => ch.type === "text").size}, salons textuels et ${guild.channels.cache.filter(ch => ch.type === "voice").size} salons vocaux avec ${guild.memberCount -1} membres.`)
     .setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL())
