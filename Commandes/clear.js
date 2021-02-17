@@ -47,5 +47,5 @@ module.exports.run = async(client, message, args) => {
 module.exports.help = {
     name: 'clear',
     category: 'moderation',
-    utility: 'permet d\'effacer des messages en masse dans le salon'
+    utility: 'Permet d\'effacer des messages en masse dans le salon'
   };

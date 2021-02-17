@@ -42,5 +42,7 @@ module.exports.run = async(client, message, args) => {
 };
 
 module.exports.help = {
-    name: "recharge"
+    name: "recharge",
+    category: "private",
+    utility: "Permet de recharger une commande sans relancer le bot"
 }

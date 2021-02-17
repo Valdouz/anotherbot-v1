@@ -25,7 +25,7 @@ module.exports = {
     name:'help',
     alias: ['h'],
     utility:'Permet de voir la liste des commandes disponibles',
-    category: ''
+    category: 'informations'
   },
   run: async (client, message, args) => {
    if(!args[0]) {
@@ -53,8 +53,33 @@ module.exports = {
     })
     console.log(text)
 
+text+=`\n\n:shield: **Protection :**`
+    client.commands.forEach(command => {
+      if (!command.help || !command.help.category || !command.help.name) return;
+      if (command.help.category.toLowerCase() !== 'automod') return;
+      text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
+    })
+    console.log(text)
+
+text+=`\n\n:information_source: **Informations :**`
+    client.commands.forEach(command => {
+      if (!command.help || !command.help.category || !command.help.name) return;
+      if (command.help.category.toLowerCase() !== 'informations') return;
+      text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
+    })
+    console.log(text)
+    
+
+    text+=`\n\n:closed_lock_with_key: **Privé :**`
+    client.commands.forEach(command => {
+      if (!command.help || !command.help.category || !command.help.name) return;
+      if (command.help.category.toLowerCase() !== 'private') return;
+      text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
+    })
+    console.log(text)
+    
     message.channel.send(
-      new Discord.MessageEmbed().setColor('#FFC0CB').setDescription(text)
+      new Discord.MessageEmbed().setColor('RANDOM').setDescription(text)
     )
   }
  else {

@@ -15,6 +15,6 @@ message.channel.send(msg);
 
 module.exports.help = {
     name: 'say',
-    category: 'fun',
+    category: 'private',
     utility: 'permet de faire envoyer un message par le bot'
   };

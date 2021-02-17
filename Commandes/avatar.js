@@ -34,5 +34,5 @@ module.exports.help = {
   name:  "avatar",
   alias : ["pp", "pdp", "photo",  "Avatar",  "Pp", "Pdp", "Photo"],
   category: 'fun',
-  utility: 'permet d\'afficher la photo de profil de quelqu\'un.'
+  utility: 'Permet d\'afficher la photo de profil de quelqu\'un.'
   }

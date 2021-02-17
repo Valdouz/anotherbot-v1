@@ -1,25 +1,21 @@
 const Discord = require("discord.js");
 const {PREFIX} = require("../config.js");
-const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client, message, args) => {
 
-const ping = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c215e9')
+        .setTitle(message.author.username + ' ping')
+        .setImage("https://media1.tenor.com/images/885dc039da5d39ff4b6fdd1c28a18bd2/tenor.gif?itemid=19659504")
+        .setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL());
+        return message.channel.send(embed)
+    
 
-.setTitle(`⏱️Pinging\.\.\.`)
-.setColor('#c215e9')
-.setDescription(`**:ping_pong: Pong!\nLa latence est de : \`${Math.round(client.ws.ping)}ms\`. **`)
-.setThumbnail(message.author.avatarURL())
-.setTimestamp()
-.setFooter(message.author.username, message.author.avatarURL());
-
-message.channel.send(ping);
 }
-
 
 module.exports.help = {
-  name:  "Ping",
-  alias: ["ping", "ms"],
-  category: 'fun',
-  utility: 'permet d\'afficher la latence du bot'
-}
+    name: 'ping',
+    category: "fun",
+    utility: "Ping quelqu'un"
+  };

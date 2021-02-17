@@ -51,4 +51,6 @@ if(args[0]) {
 }
 module.exports.help = {
     name: 'pfc',
+    category: 'fun',
+    utility: 'Jeu du pierre feuille ciseaux.'
   };

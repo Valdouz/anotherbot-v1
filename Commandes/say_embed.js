@@ -15,5 +15,7 @@ if(!msg) return message.channel.send("Je ne sais pas ce que je dois dire !")
 
 module.exports.help = {
     name: 'say-embed',
-    alias: ["se", "saye", "sayembed", "Say-embed", "Sayembed", "Saye", "Se"]
-}; 
+    alias: ["se", "saye", "sayembed", "Say-embed", "Sayembed", "Saye", "Se"],
+category: "private",
+utility: "envoyer un message avec le bot mais avec un embed rose"
+};

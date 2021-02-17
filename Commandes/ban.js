@@ -46,6 +46,6 @@ module.exports.run = (client, message, args) => {
     name: 'ban',
     alias : ["Ban"],
     category: 'moderation',
-    utility: 'permet de bannir un utilisateur du serveur',
+    utility: 'Permet de bannir un utilisateur du serveur',
     usage: "`.ban <@membre>`"
   };
