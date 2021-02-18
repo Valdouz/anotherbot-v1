@@ -1,7 +1,7 @@
 const config = {
 
-"TOKEN" : "NzkwMjgwOTI4NjU1MzEwODU4.X9-UeA.YRmv0SmYCkCD9WE--fWytQQKuLI",
-"PREFIX" : ".",
-"OWNER" : "748103597098795059",
+"TOKEN" : "token du bot",
+"PREFIX" : "prefix du bot",
+"OWNER" : "id de l'owner du bot",
 }
 module.exports = config;
