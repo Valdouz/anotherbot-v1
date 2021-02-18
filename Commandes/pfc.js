@@ -13,44 +13,55 @@ const pfc = [
 const result = Math.floor(Math.random() * Math.floor(pfc.length))
 
 if(args[0]) {
-    if(args[0] !== "feuille" || args[0] !== "pierre" || args[0] !== "ciseaux") {
-        if(pfc[result] == args[0]) {
-            message.channel.send(`Égalité ! ${pfc[result]}`)
-        }
-
-        if(args[0] == "ciseaux" && pfc[result] == "pierre") {
-            message.channel.send(`${pfc[result]}, Tu as perdu !`)
-        }
-
-        if(args[0] == "ciseaux" && pfc[result] == "feuille") {
-            message.channel.send(`${pfc[result]}, Tu as gagné !`)
-        }
-
-        if(args[0] == "feuille" && pfc[result] == "pierre") {
-            message.channel.send(`${pfc[result]}, Tu as gagné !`)
-        }
-
-        if(args[0] == "feuille" && pfc[result] == "ciseaux") {
-            message.channel.send(`${pfc[result]}, Tu as perdu !`)
-        }
-
-        if(args[0] == "pierre" && pfc[result] == "ciseaux") {
-            message.channel.send(`${pfc[result]}, Tu as gagné !`)
-        }
-
-        if(args[0] == "pierre" && pfc[result] == "feuille") {
-            message.channel.send(`${pfc[result]}, Tu as perdu !`)
+    if(args[0] === "feuille" || args[0] === "pierre" || args[0] === "ciseaux") {
+        switch(args[0]) {
+            "feuille":
+                switch(result) {
+                    1:
+                        message.channel.send("Mon choix : feuille. Égalité !")
+                        break;
+                    2:
+                        message.channel.send("Mon choix : pierre. Tu as gagné !")
+                        break;
+                    3:
+                        message.channel.send("Mon choix : ciseaux. Tu as perdu !")
+                        break;
+                }
+                break;
+            "pierre":
+                switch(result) {
+                    1:
+                        message.channel.send("Mon choix : feuille. Tu as perdu !")
+                        break;
+                    2:
+                        message.channel.send("Mon choix : pierre. Égalité !")
+                        break;
+                    3:
+                        message.channel.send("Mon choix : ciseaux. Tu as gagné !")
+                        break;
+                }
+                break;
+            "ciseaux":
+                switch(result) {
+                    1:
+                        message.channel.send("Mon choix : feuille. Tu as gagné !")
+                        break;
+                    2:
+                        message.channel.send("Mon choix : pierre. Tu as perdu !")
+                        break;
+                    3:
+                        message.channel.send("Mon choix : ciseaux. Égalité !")
+                        break;
+                }
         }
   } else {
-      return;
+      message.channel.send("Type d'objet invalide !")
   }
 } else {
-    return;
+    message.channel.send("Aucun objet précisé !")
 }
 
 }
 module.exports.help = {
     name: 'pfc',
-    category: 'fun',
-    utility: 'Jeu du pierre feuille ciseaux.'
   };
