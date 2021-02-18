@@ -19,41 +19,41 @@ if(args[0]) {
         if(args[0] === "pierre") choix = 2
         if(args[0] === "ciseaux") choix = 3
         switch(choix) {
-            1:
+            case 1:
                 switch(result) {
-                    1:
+                    case 1:
                         message.channel.send("Mon choix : feuille. Égalité !")
                         break;
-                    2:
+                    case 2:
                         message.channel.send("Mon choix : pierre. Tu as gagné !")
                         break;
-                    3:
+                    case 3:
                         message.channel.send("Mon choix : ciseaux. Tu as perdu !")
                         break;
                 }
                 break;
-            2:
+            case 2:
                 switch(result) {
-                    1:
+                    case 1:
                         message.channel.send("Mon choix : feuille. Tu as perdu !")
                         break;
-                    2:
+                    case 2:
                         message.channel.send("Mon choix : pierre. Égalité !")
                         break;
-                    3:
+                    case 3:
                         message.channel.send("Mon choix : ciseaux. Tu as gagné !")
                         break;
                 }
                 break;
-            3:
+            case 3:
                 switch(result) {
-                    1:
+                    case 1:
                         message.channel.send("Mon choix : feuille. Tu as gagné !")
                         break;
-                    2:
+                    case 2:
                         message.channel.send("Mon choix : pierre. Tu as perdu !")
                         break;
-                    3:
+                    case 3:
                         message.channel.send("Mon choix : ciseaux. Égalité !")
                         break;
                 }
