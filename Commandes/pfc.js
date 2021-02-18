@@ -14,8 +14,12 @@ const result = Math.floor(Math.random() * Math.floor(pfc.length))
 
 if(args[0]) {
     if(args[0] === "feuille" || args[0] === "pierre" || args[0] === "ciseaux") {
-        switch(args[0]) {
-            "feuille":
+        var choix;
+        if(args[0] === "feuille") choix = 1
+        if(args[0] === "pierre") choix = 2
+        if(args[0] === "ciseaux") choix = 3
+        switch(choix) {
+            1:
                 switch(result) {
                     1:
                         message.channel.send("Mon choix : feuille. Égalité !")
@@ -28,7 +32,7 @@ if(args[0]) {
                         break;
                 }
                 break;
-            "pierre":
+            2:
                 switch(result) {
                     1:
                         message.channel.send("Mon choix : feuille. Tu as perdu !")
@@ -41,7 +45,7 @@ if(args[0]) {
                         break;
                 }
                 break;
-            "ciseaux":
+            3:
                 switch(result) {
                     1:
                         message.channel.send("Mon choix : feuille. Tu as gagné !")
