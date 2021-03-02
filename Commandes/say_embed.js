@@ -17,5 +17,5 @@ module.exports.help = {
     name: 'say-embed',
     alias: ["se", "saye", "sayembed", "Say-embed", "Sayembed", "Saye", "Se"],
 category: "private",
-utility: "envoyer un message avec le bot mais avec un embed rose"
+utility: "envoyer un message avec le bot mais avec un embed aléatoire"
 };
