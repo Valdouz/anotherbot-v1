@@ -24,6 +24,7 @@ Les packages du bot sont les suivants :
 `canvas` : npm i canvas  
 `FFmpeg` : npm install ffmpeg-static  
 `@discordjs/opus`: npm install @discordjs/opus  
+un `npm init`devrait suffire
 
 Si vous voulez y apporter des modifications, merci d'ouvrir une issue ou une milestones.
 Le discord est aussi la pour aider et est present sur [notre site.](https://anotherbot.tk/)
