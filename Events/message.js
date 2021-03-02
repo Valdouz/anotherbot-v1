@@ -36,8 +36,13 @@ module.exports = async(client, message) => {
       var cmd = client.commands.get(commande);
 
       if (!cmd) cmd = client.aliases.get(commande);
-      if (!cmd) return;
-
+      if (!cmd) return message.channel.send("La commande n'existe pas !")
+    try {
       return cmd.run(client, message, args)
+    }
+    catch (err) {
+        message.channel.send("Une erreur est survenue")
+        console.log(err)
+    }
     }
 };
