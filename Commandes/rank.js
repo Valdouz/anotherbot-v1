@@ -4,6 +4,7 @@ const db = require('quick.db')
 
 module.exports.run = (client, message, args) => {
 
+if (args[0]) member = message.guild.author(message.mentions.users.first());
 id = message.author.id;
 xp = db.get(`xp.${message.guild.id}.${id}.lvl`);
 

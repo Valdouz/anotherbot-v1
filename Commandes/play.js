@@ -8,7 +8,7 @@ module.exports.run = (client, message, args) => {
     if(!message.member.voice) return message.channel.send(":x: Vous n'êtes pas en vocal !")
     client.distube.play(message, music)
     message.channel.send(":white_check_mark: Musique en cours de lecture !")
-
+message.react('✅');
 }
 
 module.exports.help = {

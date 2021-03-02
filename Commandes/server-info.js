@@ -9,15 +9,16 @@ exports.run = (client, message) => {
     const guild = message.guild;
 
     const embed = new Discord.MessageEmbed()
-    .setColor("#FFC0CB")
+    .setColor("RANDOM")
     .setThumbnail(guild.iconURL())
     .addField(`Plus d'informations à propos de : **${guild.name}**`,
     `• ID: ${guild.id}
     •Chef : ${guild.owner.user.tag} (${guild.ownerID})
     •Roles: ${guild.roles.cache.size}
-    •Crée le ${message.guild.createAT}
+    •Crée le ${moment(guild.createdAt).format('DD/MM/YYYY')}
     `)
     .setDescription(`${message.author.id === message.guild.owner.id ?  "Votre serveur" :  "Ce serveur"} possède ${guild.channels.cache.filter(ch => ch.type === "text").size}, salons textuels et ${guild.channels.cache.filter(ch => ch.type === "voice").size} salons vocaux avec ${guild.memberCount -1} membres.`)
+    .setTimestamp()
     .setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL())
       message.channel.send(embed)
 

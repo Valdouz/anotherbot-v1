@@ -20,18 +20,19 @@ module.exports.run = async(client, message, args) => {
                 console.log(`| --> alias ${commande.help.alias} de la commande ${commande.help.name} déchargé !`)
             }
         }
-        client.commands.set(commande.help.name, commande)
-        console.log(`commande ${commande.help.name + ".js"} chargé !`)
-        if(commande.help.alias) {
-                if(commande.help.alias.length > 1) {
-                    commande.help.alias.forEach((alias) => {
-                    client.commands.set(alias, commande)
-                    console.log(`| --> alias ${alias} de la commande ${commande.help.name} chargé !`)
+        let ncommande = require("./" + args[0] + ".js")
+        client.commands.set(ncommande.help.name, commande)
+        console.log(`commande ${ncommande.help.name + ".js"} chargé !`)
+        if(ncommande.help.alias) {
+                if(ncommande.help.alias.length > 1) {
+                    ncommande.help.alias.forEach((alias) => {
+                    client.ncommands.set(alias, commande)
+                    console.log(`| --> alias ${alias} de la commande ${ncommande.help.name} chargé !`)
                 })
             }
             else {
-                client.commands.set(commande.help.alias[0], commande)
-                console.log(`| --> alias ${commande.help.alias} de la commande ${commande.help.name} chargé !`)
+                client.commands.set(ncommande.help.alias[0], commande)
+                console.log(`| --> alias ${ncommande.help.alias} de la commande ${ncommande.help.name} chargé !`)
             }
         }
         msg.edit(":white_check_mark: **Commande** " + args[0] + " **rechargé !**")
