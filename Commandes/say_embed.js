@@ -7,7 +7,7 @@ if(message.author.id !== "748103597098795059") return message.channel.send("Perm
 let msg = args.join(" ")
 if(!msg) return message.channel.send("Je ne sais pas ce que je dois dire !")
     const embed = new Discord.MessageEmbed()
-    .setColor("#FFC0CB")
+    .setColor("RANDOM")
     .setDescription(msg)
     message.delete()
     message.channel.send(embed);
