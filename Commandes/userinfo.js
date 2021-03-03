@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
         } else if(user.presence.status === 'online') {
             statut = 'En Ligne'
         } else if(user.presence.status === 'offline') {
-            statut = 'Hors Ligne (ou Invisisble)'
+            statut = 'Hors Ligne (ou Invisible)'
         }else if(user.presence.status === 'idle') {
             statut = 'Inactif (ou "AFK")'
         }
