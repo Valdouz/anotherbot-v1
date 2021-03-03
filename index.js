@@ -7,10 +7,10 @@ const { CommandoClient } = require("discord.js-commando");
 client.distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
-        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
+        `Lecutre de \`${song.name}\` en cours - \`${song.formattedDuration}\`\nDemander par: ${song.user}`
 	))
 	.on("addSong", (message, queue, song) => message.channel.send(
-        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
+        `Ajout de ${song.name} - \`${song.formattedDuration}\` par ${song.user}`
     ))
 
 client.login(TOKEN);
