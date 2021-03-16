@@ -11,8 +11,10 @@ module.exports = async (client, member) => {
   let config = db.get(`config.${guild.id}`);
   if (config.captcha) {
 
+    console.log('captcha')
 
     const text = randomBytes(32).toString("hex").toUpperCase().replace(/[^a-z]/gi, "").substr(0, 5).split('');
+    console.log(text)
 
     const canvas = createCanvas(300,100);
     const ctx = canvas.getContext('2d');
@@ -32,18 +34,19 @@ module.exports = async (client, member) => {
 
     coordinates = coordinates.sort((a, b) => a[0]-b[0])
 
-    ctx.strokeStyle = Math.floor(Math.random()*999999);
+    ctx.strokeStyle = '#'+Math.floor(Math.random()*999999);
     ctx.beginPath();
     ctx.moveTo(coordinates[0][0], coordinates[0][1]);
     ctx.lineWidth = 5;
-    for (let i = 1; i < coordinates.lenght; i++) {
+    console.log(coordinates.lenght)
+    for (i in coordinates) {
       ctx.lineTo(coordinates[i][0], coordinates[i][1])
     };
     ctx.stroke();
 
     ctx.font = `12px Sans`;
-    for (let i = 0; i < coordinates.lenght; i++) {
-      ctx.fillStyle = Math.floor(Math.random()*999999);
+    for (i in coordinates) {
+      ctx.fillStyle = '#'+Math.floor(Math.random()*999999);
       ctx.fillText(text[i], coordinates[i][0], coordinates[i][1])
     }
 
