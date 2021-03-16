@@ -18,7 +18,7 @@
 //      alias: ["h"]
 //  };
 
-const Discord = require('discord.js')
+/*const Discord = require('discord.js')
 
 module.exports = {
   help:{
@@ -68,7 +68,14 @@ text+=`\n\n:information_source: **Informations :**`
       text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
     })
     console.log(text)
-    
+
+    text+=`\n\n:under_age: **NSFW :**`
+    client.commands.forEach(command => {
+      if (!command.help || !command.help.category || !command.help.name) return;
+      if (command.help.category.toLowerCase() !== 'nsfw') return;
+      text+=`\n\`${command.help.name}\` : ${command.help.utility || "*Non defini*"}`
+    })
+    console.log(text)
 
     text+=`\n\n:closed_lock_with_key: **Privé :**`
     client.commands.forEach(command => {
@@ -94,4 +101,97 @@ text+=`\n\n:information_source: **Informations :**`
   message.channel.send(embed)
  }
 }
-}
+}*/
+
+const pagination = require('discord.js-pagination');
+const Discord = require('discord.js');
+
+module.exports.run = (client, message, args) => {
+        const moderation = new Discord.MessageEmbed()
+
+        .setColor('fb5b39')
+        .setTitle(':tools: Moderation :')
+        .addField('`ban`', 'Permet de bannir un utilisateur du serveur')
+        .addField('`kick`', "Permet d'expulser un membre du serveur")
+        .addField('`clear`', "Permet d'effacer des messages en masse dans le salon")
+        .addField('`capatcha`', 'Configure le captcha')
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+
+        const fun = new Discord.MessageEmbed()
+
+        .setColor('19e45a')
+        .setTitle(':fire: Fun :')
+        .addField('`avatar`', "Permet d'afficher la photo de profil de quelqu'un.")
+        .addField('`cat`', "Envoie une image aléatoire de chat")
+        .addField('`dog`', "Envoie une photo aléatoire de chien")
+        .addField('`nitro`', "Envoie un faux nitro")
+        .addField('`ping`', "Envoie un gif enervé d'un ping")
+        .addField('`8ball`', 'Répond a une question')
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+        
+        const musique = new Discord.MessageEmbed()
+        
+        .setColor('19b0e4')
+        .setTitle(':musical_note: Musique :')
+        .addField('`play`', 'Permet de connecter le bot et commencer la musique')
+        .addField('`skip`', 'Permet de passer la musique')
+        .addField('`stop`', 'Permet de connecter stopper la musique.')
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+
+        const informations = new Discord.MessageEmbed()
+ 
+        .setColor('1246bf')
+        .setTitle(':information_source: Informations :')
+        .addField('`help`', "Permet de voir la liste des commandes disponibles")
+        .addField('`ms`', "Permet d'afficher la latence du bot")
+        .addField('`rank`', "Permet de voir son niveau")
+        .addField('`server-info`', "Permet d'obtenir diverses informations concernant le serveur")
+        .addField('`botinfo`', 'Permet d\'obtenir diverses informations concernant le bot')
+        .addField('`userinfo`', 'Permet d\'obtenir diverses informations concernant un utilisateur')
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+
+        const nsfw = new Discord.MessageEmbed()
+        .setTitle(':underage: NSFW :')
+        .setColor('RED')
+        .addField('`hentai`', "Envoie une image aléatoire de hentai")
+        .addField('`hentai-gif`', "Envoie un gif aléatoire de hentai.")
+        .addField('`waifu`', "Envoie une image aléatoire de waifu")
+        .addField('`wallpaper`', "Envoie un fond d\'écran aléatoire")
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+
+        const privé = new Discord.MessageEmbed()
+        
+        .setColor('765624')
+        .setTitle(':closed_lock_with_key: Privé :')
+        .addField('`eval`', "Permet d'executer du code javascript")
+        .addField('`recharge`', "Permet de recharger une commande sans relancer le bot")
+        .addField('`say`', "Permet de faire envoyer un message par le bot")
+        .addField('`say-embed`', "Permet d'envoyer un message avec le bot mais avec un embed de couleur aléatoire")
+        .setTimestamp()
+        .setFooter(message.author.username, message.author.displayAvatarURL());
+       
+        const pages = [
+                moderation,
+                fun,
+                musique,
+                informations,
+                nsfw,
+                privé
+        ]
+
+        const emojiList = ["⏪", "⏩"];
+
+        const timeout = '120000';
+
+        pagination(message, pages, emojiList, timeout)
+    }
+
+  module.exports.help = {
+      name: 'help',
+      alias: ["h"]
+  };
