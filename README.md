@@ -35,9 +35,8 @@ const config = {
 "TOKEN" : "le token du bot",
 "PREFIX" : "préfix du bot",
 "OWNER" : "id du propriétaire"
-
-module.exports = config;
 }
+module.exports = config;
 ```  
   
 Il y a un fichier d'exemple disponible.
