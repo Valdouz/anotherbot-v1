@@ -114,7 +114,7 @@ module.exports.run = (client, message, args) => {
         .addField('`ban`', 'Permet de bannir un utilisateur du serveur')
         .addField('`kick`', "Permet d'expulser un membre du serveur")
         .addField('`clear`', "Permet d'effacer des messages en masse dans le salon")
-        .addField('`capatcha`', 'Configure le captcha')
+        .addField('`captcha`', 'Configure le captcha')
         .setTimestamp()
         .setFooter(message.author.username, message.author.displayAvatarURL());
 
