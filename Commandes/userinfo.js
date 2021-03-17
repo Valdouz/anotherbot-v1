@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
         const member = message.guild.member(user);
         const moment = require('moment');
         
-        if(user.bot === 'true') {
+        if(user.bot === true) {
             robot = 'Oui'
         } else {
             robot = 'Non'
