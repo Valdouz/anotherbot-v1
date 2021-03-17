@@ -1,7 +1,7 @@
 module.exports = async(client) => {
     let status_liste = [
-        `🕊️`,
-        `.help sur ${client.guilds.cache.size} serveurs`
+        `.help`,
+        `{client.guilds.cache.size} serveurs`
       ]
     setInterval(function() {
     let st = status_liste[Math.floor(Math.random() * status_liste.length )]
