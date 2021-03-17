@@ -54,19 +54,38 @@ module.exports = async (client, member) => {
 
     let role = guild.roles.cache.get(db.get(`config.${guild.id}.captchaRole`));
     if (!role) {
-      guild.roles.create({data:{ name: 'Non verifie', color: 'GRAY'}}).then(role => db.set(`config.${guild.id}.captchaRole`, role.id));
-
-      guild.channels.cache.forEach(channel => {
-          channel.createOverwrite(role, {
-            VIEW_CHANNEL: false,
-            SEND_MESSAGES: false,
-            READ_MESSAGE_HISTORY: false
-          })
-      })
+      guild.roles.create({data:{ name: 'Non verifie', color: 'GRAY'}}).then(newRole => {
+        db.set(`config.${guild.id}.captchaRole`, newRole.id)
+        guild.channels.cache.forEach(channel => {
+            channel.createOverwrite(newRole, {
+              VIEW_CHANNEL: false,
+              SEND_MESSAGES: false,
+              READ_MESSAGE_HISTORY: false
+            })
+        })
+      });
     }
 
     let channel = client.channels.cache.get(db.get(`config.${guild.id}.captchaChannel`))
     if (!channel) guild.channels.create('captcha').then(channel => db.set(`config.${guild.id}.captchaChannel`, channel.id));
+
+    channel.updateOverwrite(role, {
+      VIEW_CHANNEL: true,
+      SEND_MESSAGES: true,
+      READ_MESSAGE_HISTORY: true
+    })
+
+    channel.updateOverwrite(client.user, {
+      VIEW_CHANNEL: true,
+      SEND_MESSAGES: true,
+      READ_MESSAGE_HISTORY: true
+    })
+
+    channel.updateOverwrite(guild.id, {
+      VIEW_CHANNEL: false,
+      SEND_MESSAGES: false,
+      READ_MESSAGE_HISTORY: false
+    })
 
     member.roles.add(role);
 
@@ -78,10 +97,12 @@ module.exports = async (client, member) => {
 
     let collector = channel.createMessageCollector(filter, { time: 30000 });
 
-    collector.on('collect', message => {
+    collector.once('collect', message => {
       if (message.content.toLowerCase() == text.join('').toLowerCase()) {
         member.roles.remove(role);
         valid = true;
+
+        channel.bulkDelete(5)
 
         if (db.get(`config.${guild.id}.welcome`)) {
           // TODO: welcome image generating
@@ -89,6 +110,7 @@ module.exports = async (client, member) => {
       } else {
         member.user.send('Vous avez rate la validation du captcha.');
         member.kick('Captcha invalide !')
+        channel.bulkDelete(5)
       }
     })
 
@@ -96,6 +118,7 @@ module.exports = async (client, member) => {
       if (valid) return;
       member.user.send('La validation du captcha a expire !')
       member.kick('Captcha expire !')
+      channel.bulkDelete(5)
     }, 30000)
 
   }
