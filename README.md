@@ -67,7 +67,7 @@ Les packages du bot sont les suivants :
 `amethyste-api` : npm i amethyste-api  
 `canvas` : npm i canvas  
   
-un `npm init`devrait suffire
+un `npm i`devrait suffire
 
 ## Suggestions
 Si vous voulez y apporter des modifications, merci d'ouvrir une [issue](https://github.com/Valdouz/anotherbot/issues
