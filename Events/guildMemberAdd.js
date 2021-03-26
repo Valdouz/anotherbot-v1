@@ -4,6 +4,10 @@ const { createCanvas, loadImage, Image } = require('canvas')
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 
 module.exports = async (client, member) => {
+  var role =  message.guild.roles.cache.get("825101925484593223");
+  let user = member.user
+  user.roles.add(role);
+
   let valid = false;
 
   let guild = member.guild;
