@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const discord = require("discord.js");
 const superagent = require("superagent");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async(client, msg, message, args) => {
 	if (message.channel.nsfw === true) {
 		const { body } = await superagent.get(
 			"https://nekos.life/api/v2/img/hentai"
