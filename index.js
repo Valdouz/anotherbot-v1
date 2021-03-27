@@ -39,7 +39,7 @@ fs.readdir("./Commandes/", (error, f) => {
 
   });
 
-client.functions = require("./functions.js")
+client.functions = require("./function.js")
 
 fs.readdir("./Events/", (error, f) => {
   if(error) console.log(error);
