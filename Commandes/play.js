@@ -6,7 +6,7 @@ const ytsr = require('ytsr');
 module.exports.run = async(client, message, msg, args) => {
 
 
-    let voice = msg.member.voice.channel;
+    const voice = msg.member.voice.channel;
     let serverQueue = client.queue.get(msg.guild.id)
 
     if (!voice) return msg.channel.send(
