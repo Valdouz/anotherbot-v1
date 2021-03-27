@@ -1,0 +1,29 @@
+const discord = require("discord.js");
+const superagent = require("superagent");
+
+module.exports.run = (client, msg, args) => {
+	if (msg.channel.nsfw === true) {
+		superagent
+			.get("https://nekobot.xyz/api/image")
+			.query({ type: "4k" })
+			.end((err, response, body) => {
+				let embed = new discord.MessageEmbed()
+					.setImage(response.body.message)
+					.setColor("RANDOM")
+					.setTitle("4k:")
+					.setFooter(`De AnotherBot pour ${message.author.username}`, message.author.displayAvatarURL());
+
+				msg.channel.send(embed);
+			});
+	} else {
+		const error = new Discord.MessageEmbed()
+        .setTitle("Ce salon n'est pas __**NSFW**__ :underage: !")
+         message.channel.send(error);
+         message.react('💢');
+
+	}
+};
+
+module.exports.help = {
+	name: "4k",
+};

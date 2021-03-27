@@ -1,8 +1,8 @@
 //EXEMPLE
 const config = {
-TOKEN: "token",
-PREFIX: "prefix",
-OWNER: "ownerid",
-STARTCHANNEL: "channelid",
+TOKEN: "ODEyMDI5MzE0NjE0NTU4NzQw.YC6zOw.PLEt-xSawEEyNJGYjVZsRlfx6js",
+PREFIX: "dev.",
+OWNER: "748103597098795059",
+STARTCHANNEL: "810281784846712913",
 }
 module.exports = config;
