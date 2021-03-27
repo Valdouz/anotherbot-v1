@@ -39,6 +39,8 @@ fs.readdir("./Commandes/", (error, f) => {
 
   });
 
+client.functions = require("./functions.js")
+
 fs.readdir("./Events/", (error, f) => {
   if(error) console.log(error);
   console.log(`${f.length} events en chargement`);
