@@ -3,7 +3,7 @@ const {PREFIX} = require("../config.js");
 const ytdl = require('ytdl-core');
 const ytsr = require('ytsr');
 
-module.exports.run = (client, message, msg, args) => {
+module.exports.run = async(client, message, msg, args) => {
 
 
     let voice = msg.member.voice.channel;
