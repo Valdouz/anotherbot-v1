@@ -12,7 +12,7 @@ module.exports.run = (client, msg, args) => {
 					.setImage(response.body.message)
 					.setColor("RANDOM")
 					.setTitle("4k:")
-					.setFooter(`De AnotherBot pour ${message.author.username}`, message.author.displayAvatarURL());
+					.setFooter(`De AnotherBot pour ${msg.author.username}`, msg.author.displayAvatarURL());
 
 				msg.channel.send(embed);
 			});
