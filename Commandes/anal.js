@@ -5,12 +5,12 @@ module.exports.run = (client, msg, args) => {
 	if (msg.channel.nsfw === true) {
 		superagent
 			.get("https://nekobot.xyz/api/image")
-			.query({ type: "4k" })
+			.query({ type: "anal" })
 			.end((err, response, body) => {
 				let embed = new discord.MessageEmbed()
 					.setImage(response.body.message)
 					.setColor("RANDOM")
-					.setTitle("4k:")
+					.setTitle("Anal :")
 					.setFooter(`De AnotherBot pour ${message.author.username}`, message.author.displayAvatarURL());
 
 				msg.channel.send(embed);
@@ -20,10 +20,9 @@ module.exports.run = (client, msg, args) => {
         .setTitle("Ce salon n'est pas __**NSFW**__ :underage: !")
          message.channel.send(error);
          message.react('💢');
-
 	}
 };
 
 module.exports.help = {
-	name: "4k",
+	name: "anal"
 };
