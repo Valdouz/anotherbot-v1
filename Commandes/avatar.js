@@ -9,7 +9,7 @@ module.exports.run = (client, message, args) => {
     .setTimestamp()
     .setColor('RANDOM')
     .setTitle('Voici votre avatar :')
-    .setImage(message.author.displayAvatarURL({dynamic: true, size: 1024}))
+    .setImage(message.author.displayAvatarURL({dynamic: true, size: 1024, format: 'png'}))
     .setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL({dynamic: true}));
     return message.channel.send(embed)
 
@@ -22,7 +22,7 @@ module.exports.run = (client, message, args) => {
     .setTimestamp()
     .setColor('RANDOM')
     .setTitle(`Voici l\'avatar de : ${user.username}`)
-    .setImage(user.displayAvatarURL({dynamic: true, size: 1024}))
+    .setImage(user.displayAvatarURL({dynamic: true, size: 1024, format: 'png'}))
     .setFooter("De AnotherBot pour " + message.author.username, message.author.displayAvatarURL({dynamic: true}));
 
      message.channel.send(embed)
