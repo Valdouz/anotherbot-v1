@@ -22,7 +22,8 @@
     "request": "^2.88.2",
     "snekfetch": "^4.0.4",
     "superagent": "^6.1.0",
-    "util": "^0.12.3"
+    "util": "^0.12.3",
+    "ytsr": "^3.5.0"
   },
   "devDependencies": {},
   "scripts": {

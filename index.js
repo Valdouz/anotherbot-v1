@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+let client = new Discord.Client({ partials: ["REACTION", "MESSAGE"]})
 const fs = require('fs');
 const {TOKEN, PREFIX} = require("./config.js");
 const DisTube = require('distube')
