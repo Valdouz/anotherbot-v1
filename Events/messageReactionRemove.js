@@ -17,7 +17,7 @@ module.exports = async (client, messageReaction, user) => {
         return true;
     }
 
-    const rules = require("./data/reactionRoles.json")
+    const rules = require("../data/reactionRoles.json")
 
     if (!isValidMessageReactionAdd(messageReaction, user)) return console.log("invalid reaction");
 
