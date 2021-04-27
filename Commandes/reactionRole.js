@@ -10,6 +10,7 @@ module.exports = {
     run: async (client, msg, args) => {
       if(!msg.guild.member(msg.author).hasPermission("MANAGE_GUILD")) return console.log("no perm")
         if(args[0] == "create") {
+            var emoji = "";
             let baseEmbed = new Discord.MessageEmbed()
                 .setColor(client.invisible)
                 .setDescription("**Configuration du role reaction**\n\nVeuillez mentionner le salon dans le quel se trouve le rôle réaction...")
@@ -85,8 +86,7 @@ module.exports = {
                 if(step == 3) {
                     m.delete()
 
-                    var emoji = m.content
-
+                    emoji = m.content
                     if(emoji.startsWith("<") && emoji.endsWith(">")) {
                       //<:emojiName:IDIDIDID>
                       emoji = emoji.split(":")[2].split(">")[0]
