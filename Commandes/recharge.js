@@ -26,7 +26,7 @@ module.exports.run = async(client, message, args) => {
         if(ncommande.help.alias) {
                 if(ncommande.help.alias.length > 1) {
                     ncommande.help.alias.forEach((alias) => {
-                    client.ncommands.set(alias, commande)
+                    client.commands.set(alias, ncommande)
                     console.log(`| --> alias ${alias} de la commande ${ncommande.help.name} chargé !`)
                 })
             }
