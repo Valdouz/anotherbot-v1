@@ -1,4 +1,4 @@
-module.exports = async (messageReaction, user, client) => {
+module.exports = async (client, messageReaction, user) => {
 
     if(messageReaction.message.partial) await messageReaction.message.fetch()
 
@@ -17,7 +17,7 @@ module.exports = async (messageReaction, user, client) => {
         return true;
     }
 
-    const rules = require("./data/reactionRoles.json")
+    const rules = require("../data/reactionRoles.json")
 
     if (!isValidMessageReactionAdd(messageReaction, user)) return console.log("invalid reaction");
 

@@ -8,7 +8,7 @@ module.exports = {
     alias: ["rr", "reaction-role"],
     category: "utility",},
     run: async (client, msg, args) => {
-      if(!msg.guild.member(msg.author).hasPermission("MANAGE_GUILD")) return console.log("no perm")
+      if(!msg.guild.member(msg.author).hasPermission("MANAGE_GUILD")) return message.channel.send(":x: Vous n'avez pas la permission `MANAGE_GUILD`")
         if(args[0] == "create") {
             let baseEmbed = new Discord.MessageEmbed()
                 .setColor(client.invisible)
@@ -170,7 +170,7 @@ module.exports = {
                         console.log(e)
                     }
 
-                    fs.writeFile("./data/reactionRoles.json", JSON.stringify(reactionRoles), (err) => {
+                    fs.writeFile("../data/reactionRoles.json", JSON.stringify(reactionRoles), (err) => {
                         if(err) console.log(err)
                     });
 
