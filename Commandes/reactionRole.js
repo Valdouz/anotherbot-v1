@@ -1,7 +1,7 @@
 const db = require("quick.db")
 const Discord = require('discord.js')
 const fs = require("fs")
-const reactionRoles = require("../../data/reactionRoles.json")
+const reactionRoles = require("../data/reactionRoles.json")
 
 module.exports = {
     help:{name: "reactionrole",
