@@ -1,4 +1,4 @@
-module.exports = async(messageReaction, user, client) => {
+module.exports = async(client, messageReaction, user) => {
     if(messageReaction.message.partial) await messageReaction.message.fetch()
 
     if(messageReaction.partial) await messageReaction.fetch()
