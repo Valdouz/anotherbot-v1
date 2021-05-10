@@ -7,6 +7,7 @@ module.exports.run = async(client, message, args) => {
     try {
         let commande = client.commands.get(args[0])
         client.commands.delete(commande.help.name)
+        delete require.cache[require.resolve(`./${args[0]}.js`  )] 
         console.log(`commande ${commande.help.name + ".js"} déchargé !`)
         if(commande.help.alias) {
                 if(commande.help.alias.length > 1) {
